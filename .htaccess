@@ -1,0 +1,14 @@
+#кодіровка
+AddDefaultCharset utf-8
+
+#включення модулю конфігурацій
+RewriteEngine on
+
+#перевіряє чи не файл
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#перевіряє чи не директорія
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#перенаправлення на index
+RewriteRule ^(.*)$ index.php

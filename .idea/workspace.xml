@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a6e6a18f-2444-4b48-ab04-d36ec6b4f2ee" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="ProjectId" id="1gHI9sjsAkNTPYP7wOGcFrofxLo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6e6a18f-2444-4b48-ab04-d36ec6b4f2ee" name="Default Changelist" comment="" />
+      <created>1597764942617</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597764942617</updated>
+      <workItem from="1597764944351" duration="1702000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="503" y="320" width="353" height="156" key="NewPhpFileDialog" timestamp="1597766203438">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="503" y="320" width="353" height="156" key="NewPhpFileDialog/0.27.1366.741/1366.0.1600.900@0.27.1366.741" timestamp="1597766203438" />
+    <state x="491" y="179" width="378" height="439" key="chooseDestDirectoryDialog" timestamp="1597765042115">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="491" y="179" width="378" height="439" key="chooseDestDirectoryDialog/0.27.1366.741/1366.0.1600.900@0.27.1366.741" timestamp="1597765042115" />
+  </component>
+</project>
