@@ -1,0 +1,8 @@
+#перевіряє чи не файл
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#перевіряє чи не директорія
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#QSA дозволяє добавляти параметри в строці запиту до вже існуючих
+RewriteRule (.*) index.php?$1 [L,QSA]

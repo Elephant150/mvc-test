@@ -7,7 +7,7 @@ error_reporting(E_ALL); //звіт про помилки
 function debug($value)
 {
     echo '<pre>';
-    var_dump($value);
+    print_r($value);
     echo '</pre>';
     exit();
 }
