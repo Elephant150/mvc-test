@@ -29,12 +29,59 @@ class Router
     public function matchRoute($url)
     {
         foreach ($this->routes as $pattern => $route) {
-//            якщо співпадіння було знайдено
-            if ($url == $pattern){
-                $this->route = $route; // то записується поточний маршрут
+
+            if (preg_match("#$pattern#i", $url, $matches)) {
+
+                foreach ($matches as $key => $value) {
+                    if (is_string($key)) {
+                        $route[$key] = $value;
+                    }
+                }
+
+                if (!isset($route['action'])) {
+                    $route['action'] = 'index';
+                }
+
+                $this->route = $route; // записується поточний маршрут
                 return true;
             }
         }
         return false;
+    }
+
+    /**
+     * перенаправляє URL по коректному маршруту
+     * @param string $url вхідний URL
+     * @return void
+     */
+    public function dispatch($url)
+    {
+        if ($this->matchRoute($url)) {
+            $controller = $this->upperCamelCase($this->route['controller']);
+
+            if (class_exists($controller)) {
+                $controllerObject = new $controller;
+                $action = $this->lowerCamelCase($this->route['action']) . 'Action';
+                if (method_exists($controllerObject, $action)) {
+                    $controllerObject->$action();
+                } else {
+                    echo "Method <strong>$controller->$action</strong> not found!";
+                }
+            } else {
+                echo "Class +$controller+ not found!";
+            }
+        } else {
+            include '../public/404.html';
+        }
+    }
+
+    public function upperCamelCase($name)
+    {
+        return str_replace(' ', '', ucwords(str_replace('-', ' ', $name)));
+    }
+
+    public function lowerCamelCase($name)
+    {
+        return lcfirst($this->upperCamelCase($name));
     }
 }
