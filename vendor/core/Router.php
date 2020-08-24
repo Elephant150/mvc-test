@@ -57,7 +57,7 @@ class Router
     public function dispatch($url)
     {
         if ($this->matchRoute($url)) {
-            $controller = $this->upperCamelCase($this->route['controller']);
+            $controller = 'application\controllers\\' . $this->upperCamelCase($this->route['controller']);
 
             if (class_exists($controller)) {
                 $controllerObject = new $controller;
@@ -68,7 +68,7 @@ class Router
                     echo "Method <strong>$controller->$action</strong> not found!";
                 }
             } else {
-                echo "Class +$controller+ not found!";
+                echo "Class <strong>$controller</strong> not found!";
             }
         } else {
             include '../public/404.html';
