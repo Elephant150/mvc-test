@@ -2,20 +2,19 @@
 
 namespace application\controllers;
 
-class Main
+
+class Main extends App
 {
+    public $layout = 'main';
+
     public function indexAction()
     {
-        echo 'index Main';
+//        $this->layout = false;
+//        $this->layout = 'default';
+//        $this->view = 'lol';
     }
-
-    public function appleAction()
+    public function testAction()
     {
-        echo 'apple';
-    }
 
-    public function newMain()
-    {
-        echo 'newMain';
     }
 }

@@ -42,6 +42,8 @@ class Router
                     $route['action'] = 'index';
                 }
 
+                $route['controller'] = $this->upperCamelCase($route['controller']);// приводить контроллер у правильну форму (регістр, дефіси ...)
+                $route['action'] = $this->lowerCamelCase($route['action']);// приводить action в правильну форму (регістр, дефіси ...)
                 $this->route = $route; // записується поточний маршрут
                 return true;
             }
@@ -56,14 +58,17 @@ class Router
      */
     public function dispatch($url)
     {
+        $url = $this->removeQueryString($url);
+
         if ($this->matchRoute($url)) {
-            $controller = 'application\controllers\\' . $this->upperCamelCase($this->route['controller']);
+            $controller = 'application\controllers\\' . $this->route['controller'];
 
             if (class_exists($controller)) {
-                $controllerObject = new $controller;
-                $action = $this->lowerCamelCase($this->route['action']) . 'Action';
+                $controllerObject = new $controller($this->route);
+                $action = $this->route['action'] . 'Action';
                 if (method_exists($controllerObject, $action)) {
                     $controllerObject->$action();
+                    $controllerObject->getView();
                 } else {
                     echo "Method <strong>$controller->$action</strong> not found!";
                 }
@@ -72,6 +77,19 @@ class Router
             }
         } else {
             include '../public/404.html';
+        }
+    }
+
+//    обрізає явні GET елементи
+    public function removeQueryString($url)
+    {
+        if ($url){
+            $params = explode('&', $url);
+            if (false === strpos($params[0], '=')){
+                return rtrim($params[0], '/');
+            }else{
+                return '';
+            }
         }
     }
 

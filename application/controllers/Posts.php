@@ -2,20 +2,21 @@
 
 namespace application\controllers;
 
-class Posts
+
+class Posts extends App
 {
-    public function index()
+    public function indexAction()
     {
-        echo 'index Posts';
+
     }
 
-    public function post()
+    public function postAction()
     {
-        echo 'post';
+
     }
 
-    public function newPost()
+    public function newPostAction()
     {
-        echo 'newPost';
+
     }
 }

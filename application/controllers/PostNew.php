@@ -2,20 +2,21 @@
 
 namespace application\controllers;
 
-class PostNew
+
+class PostNew extends App
 {
     public function indexAction()
     {
-        echo 'PostNew';
+
     }
 
-    public function test()
+    public function testAction()
     {
-        echo 'test';
+
     }
 
     public function newTestAction()
     {
-        echo 'newTest';
+
     }
 }
